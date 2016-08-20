@@ -44,4 +44,42 @@ module OneAway
       false
     end
   end
+
+  def one_away(s1, s2)
+    if s1.size == s2.size
+      seen_one_away = false
+
+      (0...s1.size).each do |index|
+        if s1[index] != s2[index]
+          if seen_one_away
+            return false
+          else
+            seen_one_away = true
+          end
+        end
+      end
+
+      seen_one_away
+    elsif (s1.size - s2.size).abs == 1
+      fidx = 0
+      sidx = 0
+
+      while fidx < s1.size && sidx < s2.size do
+        if s1[fidx] != s2[sidx]
+          if fidx != sidx
+            return false
+          end
+
+          s1.size > s2.size ? (fidx += 1) : (sidx += 1)
+        else
+          fidx += 1
+          sidx += 1
+        end
+      end
+
+      true
+    else
+      false
+    end
+  end
 end
