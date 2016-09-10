@@ -2,7 +2,6 @@ require 'stack'
 
 module QueueViaStacks
   class MyQueue
-    class EmptyMyQueueException < Exception; end
 
     def initialize
       @newest = Stack.new
