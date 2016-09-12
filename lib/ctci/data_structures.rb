@@ -1,2 +1,5 @@
 require 'ctci/data_structures/queue'
 require 'ctci/data_structures/graph_node'
+require 'ctci/data_structures/singly_linked_node'
+require 'ctci/data_structures/tree_node'
+require 'ctci/data_structures/stack'
