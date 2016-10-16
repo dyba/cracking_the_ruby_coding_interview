@@ -1,20 +1,19 @@
 module CTCI
   module LinkedLists
-    # TODO: Keep 'list' unchanged
     def reverse_list list
       reversed = nil
-      cloned = list
+      original = list
 
-      while cloned do
-        front, rest = cloned, cloned.next
-        front.next = nil
+      while original do
+        head, rest = original, original.next
+        head.next = nil
 
         if reversed
-          front.next = reversed
+          head.next = reversed
         end
 
-        reversed = front
-        cloned = rest
+        reversed = head
+        original = rest
       end
 
       reversed
